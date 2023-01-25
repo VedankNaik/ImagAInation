@@ -22,6 +22,15 @@ const Home = () => {
   };
 
   const generateAction = async () => {
+    if (!input) {
+      alert("Please enter prompt");
+      return;
+    }
+    if (!key) {
+      alert("Please enter token");
+      return;
+    }
+
     if (isGenerating && retry === 0) return;
 
     setIsGenerating(true);
